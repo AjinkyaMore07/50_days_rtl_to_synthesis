@@ -1,0 +1,99 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5fbe08678880 .scope module, "tb_Basic_Gates" "tb_Basic_Gates" 2 2;
+ .timescale 0 0;
+v0x5fbe0868f680_0 .var "a_in", 0 0;
+v0x5fbe0868f740_0 .net "and_out", 0 0, L_0x5fbe08690030;  1 drivers
+v0x5fbe0868f7e0_0 .var "b_in", 0 0;
+v0x5fbe0868f880_0 .net "nand_out", 0 0, L_0x5fbe08690490;  1 drivers
+v0x5fbe0868f920_0 .net "nor_out", 0 0, L_0x5fbe08690370;  1 drivers
+v0x5fbe0868f9c0_0 .net "not_A", 0 0, L_0x5fbe0868fe60;  1 drivers
+v0x5fbe0868fa90_0 .net "not_B", 0 0, L_0x5fbe0868ff20;  1 drivers
+v0x5fbe0868fb60_0 .net "or_out", 0 0, L_0x5fbe086900f0;  1 drivers
+v0x5fbe0868fc30_0 .net "xnor_out", 0 0, L_0x5fbe08690780;  1 drivers
+v0x5fbe0868fd90_0 .net "xor_out", 0 0, L_0x5fbe086905f0;  1 drivers
+S_0x5fbe08678a10 .scope module, "uut" "Basic_Gates" 2 9, 3 1 0, S_0x5fbe08678880;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a_in";
+    .port_info 1 /INPUT 1 "b_in";
+    .port_info 2 /OUTPUT 1 "not_A";
+    .port_info 3 /OUTPUT 1 "not_B";
+    .port_info 4 /OUTPUT 1 "and_out";
+    .port_info 5 /OUTPUT 1 "or_out";
+    .port_info 6 /OUTPUT 1 "nor_out";
+    .port_info 7 /OUTPUT 1 "nand_out";
+    .port_info 8 /OUTPUT 1 "xor_out";
+    .port_info 9 /OUTPUT 1 "xnor_out";
+L_0x5fbe0868fe60 .functor NOT 1, v0x5fbe0868f680_0, C4<0>, C4<0>, C4<0>;
+L_0x5fbe0868ff20 .functor NOT 1, v0x5fbe0868f7e0_0, C4<0>, C4<0>, C4<0>;
+L_0x5fbe08690030 .functor AND 1, v0x5fbe0868f680_0, v0x5fbe0868f7e0_0, C4<1>, C4<1>;
+L_0x5fbe086900f0 .functor OR 1, v0x5fbe0868f680_0, v0x5fbe0868f7e0_0, C4<0>, C4<0>;
+L_0x5fbe08690300 .functor OR 1, v0x5fbe0868f680_0, v0x5fbe0868f7e0_0, C4<0>, C4<0>;
+L_0x5fbe08690370 .functor NOT 1, L_0x5fbe08690300, C4<0>, C4<0>, C4<0>;
+L_0x5fbe08690420 .functor AND 1, v0x5fbe0868f680_0, v0x5fbe0868f7e0_0, C4<1>, C4<1>;
+L_0x5fbe08690490 .functor NOT 1, L_0x5fbe08690420, C4<0>, C4<0>, C4<0>;
+L_0x5fbe086905f0 .functor XOR 1, v0x5fbe0868f680_0, v0x5fbe0868f7e0_0, C4<0>, C4<0>;
+L_0x5fbe086906b0 .functor XOR 1, v0x5fbe0868f680_0, v0x5fbe0868f7e0_0, C4<0>, C4<0>;
+L_0x5fbe08690780 .functor NOT 1, L_0x5fbe086906b0, C4<0>, C4<0>, C4<0>;
+v0x5fbe08678f30_0 .net *"_ivl_12", 0 0, L_0x5fbe08690420;  1 drivers
+v0x5fbe0868eb70_0 .net *"_ivl_18", 0 0, L_0x5fbe086906b0;  1 drivers
+v0x5fbe0868ec50_0 .net *"_ivl_8", 0 0, L_0x5fbe08690300;  1 drivers
+v0x5fbe0868ed10_0 .net "a_in", 0 0, v0x5fbe0868f680_0;  1 drivers
+v0x5fbe0868edd0_0 .net "and_out", 0 0, L_0x5fbe08690030;  alias, 1 drivers
+v0x5fbe0868eee0_0 .net "b_in", 0 0, v0x5fbe0868f7e0_0;  1 drivers
+v0x5fbe0868efa0_0 .net "nand_out", 0 0, L_0x5fbe08690490;  alias, 1 drivers
+v0x5fbe0868f060_0 .net "nor_out", 0 0, L_0x5fbe08690370;  alias, 1 drivers
+v0x5fbe0868f120_0 .net "not_A", 0 0, L_0x5fbe0868fe60;  alias, 1 drivers
+v0x5fbe0868f1e0_0 .net "not_B", 0 0, L_0x5fbe0868ff20;  alias, 1 drivers
+v0x5fbe0868f2a0_0 .net "or_out", 0 0, L_0x5fbe086900f0;  alias, 1 drivers
+v0x5fbe0868f360_0 .net "xnor_out", 0 0, L_0x5fbe08690780;  alias, 1 drivers
+v0x5fbe0868f420_0 .net "xor_out", 0 0, L_0x5fbe086905f0;  alias, 1 drivers
+    .scope S_0x5fbe08678880;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5fbe0868f680_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5fbe0868f7e0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5fbe0868f680_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5fbe0868f7e0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5fbe0868f680_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5fbe0868f7e0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5fbe0868f680_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5fbe0868f7e0_0, 0, 1;
+    %delay 10, 0;
+    %end;
+    .thread T_0;
+    .scope S_0x5fbe08678880;
+T_1 ;
+    %delay 100, 0;
+    %vpi_call 2 39 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x5fbe08678880;
+T_2 ;
+    %vpi_call 2 43 "$dumpfile", "Basic_Gates.vcd" {0 0 0};
+    %vpi_call 2 44 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5fbe08678880 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Basic_Gates_tb.sv";
+    "Basic_Gates_Data_Flow.v";
