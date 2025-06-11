@@ -124,6 +124,40 @@ The testbench applies a set of test vectors to the CLA module and verifies its f
        
       endmodule
 
+![cla_waveform](https://github.com/user-attachments/assets/3bc44bd4-b950-455e-8a1a-ff71d4b948ae)
+
+---
+
+## synthesizing the half_adder design using Yosys!
+
+Step-by-Step Yosys Flow
+
+1.Start Yosys
+
+    yosys
+
+2.Read the liberty library
+
+    read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+3.Read the Verilog code
+
+    read_verilog cla.v
+
+4.Synthesize the design
+
+    synth -top FA  
+
+5.Technology mapping
+
+    abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+6.Visualize the gate-level netlist
+
+    show
+
+![cla yosys_show](https://github.com/user-attachments/assets/ae6b7f71-64f7-46f2-915e-b28d95066e01)
+
 ---
 
 
